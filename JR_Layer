@@ -1,0 +1,11 @@
+import maya.cmds as cmds
+
+baseAnimationLayer = cmds.animLayer(query=True, root=True)
+jr_exists = cmds.animLayer("JR_Layer", query=True, exists = True)
+
+if jr_exists == True:
+    # Note for future reference, the edit allows me the code to edit the current layer
+    cmds.animLayer("JR_Layer", addSelectedObjects = True, edit =True)
+else:
+    cmds.animLayer("JR_Layer", addSelectedObjects = True)
+
